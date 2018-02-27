@@ -16,7 +16,7 @@ RUN apk update && apk add --no-cache \
     php7-phar \
     && touch $HOME/.bash_profile \
     && curl --silent --show-error https://platform.sh/cli/installer | php \
-    && mkdir ~/.ssh \
-    && ssh-keyscan -t rsa ssh.us.platform.sh, git.us.platform.sh >> ~/.ssh/known_hosts
+    && mkdir $HOME/.ssh \
+    && ssh-keyscan -t rsa ssh.us.platform.sh, git.us.platform.sh >> $HOME/.ssh/known_hosts
 
 CMD ["platform"]
